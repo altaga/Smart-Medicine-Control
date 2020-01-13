@@ -88,19 +88,19 @@ https://github.com/altaga/Smart-Medicine-Control/blob/master/Google%20Colab%20Mo
 
 El primer paso para crear un modelo se AI aterrizado para microcontroladores sera utilizar la version de TensorFlow mas reciente.
 
-<img src = "https://i.ibb.co/bNCF93B/image.png" width = "500">
+<img src = "https://i.ibb.co/bNCF93B/image.png" width = "700">
 
 Importamos las siguientes librerias para el buen funcionamiento del codigo.
 
-<img src = "https://i.ibb.co/dm3htqH/image.png" width = "500">
+<img src = "https://i.ibb.co/dm3htqH/image.png" width = "700">
 
 Revisamos la version de TensorFlow que tenemos.
 
-<img src = "https://i.ibb.co/s5yncPV/image.png" width = "500">
+<img src = "https://i.ibb.co/s5yncPV/image.png" width = "700">
 
 Importamos el dataset para realizar el modelo.
 
-<img src = "https://i.ibb.co/4Tqj1HD/image.png" width = "500">
+<img src = "https://i.ibb.co/4Tqj1HD/image.png" width = "700">
 
 Obtaining the data and turning it into a Pandas dataframe.
 
@@ -118,29 +118,29 @@ This is a dataframe of the entry and exit of medications in a hospital in one ye
 *   Mi5 = Input Medicine 5
 *   U = Urgency
 
-<img src = "https://i.ibb.co/ZJGVfL5/image.png" width = "500">
+<img src = "https://i.ibb.co/ZJGVfL5/image.png" width = "700">
 
 Revisamos la data para ver que tenemos stock de entrada y de salida, como es normal podemos ver que el hospital al tener un mal sistema de inventario tenemos un sobre stock, con mas medicamentos de entrada que de salida, sin embargo nosotros tenemos que poder arreglar eso mediante nuestra AI.
 
-<img src = "https://i.ibb.co/m6qhP4X/image.png" width = "500">
+<img src = "https://i.ibb.co/m6qhP4X/image.png" width = "700">
 
 Tomamos los primeros 5 datos de entrada como el stock de salida y los siguientes 6 como los 5 medicamentos de entrada y su urgencia.
 
 La urgencia la medimos en una escala de 0 - 5.
 
-<img src = "https://i.ibb.co/7Gn5NKR/image.png" width = "500">
+<img src = "https://i.ibb.co/7Gn5NKR/image.png" width = "700">
 
 Creamos nuestro modelo basandonos una entrada de 5 neuronas y una salida de 6.
 
-<img src = "https://i.ibb.co/Q9cYnhD/image.png" width = "500">
+<img src = "https://i.ibb.co/Q9cYnhD/image.png" width = "700">
 
 Entrenamos a nuestro modelo realizando 1000 ciclos con los datos de entrenamiento, este valor pueden variarlo para obtener diferentes resultados, pero modificarlo puede provocar un underfit u overfit del modelo.
 
-<img src = "https://i.ibb.co/h7CqTvS/image.png" width = "500">
+<img src = "https://i.ibb.co/h7CqTvS/image.png" width = "700">
 
 Realizamos las graficas de precicion y perdida del modelo para verificar que funcione correctamente, estas graficas son un estandard en los modelos de AI, recomiendo siempre relizarlas en todos sus modelos.
 
-<img src = "https://i.ibb.co/mtfv6Bc/image.png" width = "500"><img src = "https://i.ibb.co/bzwnJYw/image.png" width = "500">
+<img src = "https://i.ibb.co/mtfv6Bc/image.png" width = "400"><img src = "https://i.ibb.co/bzwnJYw/image.png" width = "400">
 
 ### Widget Configuration:
 
