@@ -11,9 +11,7 @@ Always use technology to improve the world, if you are a black hat or gray hat h
 * [Connection Diagram](#connection-diagram)
 * [RFID Introduction](#rfid-introduction)
 * [Google Colab Project](#google-colab-project)
-* [AI Developing](#brainium-setup)
-* [CloudMQTT Setup](#cloudmqtt-setup)
-* [Laptop Setup](#laptop-setup)
+* [Pc Setup](#pc-setup)
 * [Arm Setup](#arm-setup)
 * [The Final Product](#the-final-product)
 * [Future Rollout](#future-rollout)
@@ -156,7 +154,7 @@ Seleccionamos al azar un dato e la entrada y lo evaluamos con nuestro modelo nor
 
 Aqui termina la parte relacionada con el modelo de AI, la siguiente seccion es la configuracion de tu maquina para poder compilar y flashear el programa en la board.
 
-## Pc Configuration:
+## Pc Setup:
 
 Press the button to create the widget.
 
