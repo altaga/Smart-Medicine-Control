@@ -241,7 +241,7 @@ http://localhost:1880/ui
 
 If we execute the Exe.py file, we will see how the data appears on the Dashboard.
 
-<img src = "https://i.ibb.co/1fqQnfw/image.png" width = "800">
+<img src = "https://i.ibb.co/Cs3v3Gr/image.png" width = "800">
 
 ## Arm Setup:
 
