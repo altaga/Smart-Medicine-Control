@@ -9,7 +9,8 @@ Always use technology to improve the world, if you are a black hat or gray hat h
 * [Introduction](#introduction)
 * [Materials](#materials)
 * [Connection Diagram](#connection-diagram)
-* [Google Colab Proyect](#brainium-setup)
+* [RFID Introduction](#rfid-introduction)
+* [Google Colab Project](#google-colab-project)
 * [AI Developing](#brainium-setup)
 * [CloudMQTT Setup](#cloudmqtt-setup)
 * [Laptop Setup](#laptop-setup)
@@ -79,34 +80,67 @@ This scheme is applicable to any RFID reader in the market but it is more effici
 
 In this case we use this technology for medical inventory.
 
-### Model Training:
+## Google Colab Project:
 
-Before performing any other task, it was vital to be able to generate a model for elbow rehabilitation, the system can be extended to any rehabilitation but we chose elbow as the first sample.
+Para realizar nuestro proyecto lo mas compatible posible con cualquier computadora o incluso un movil, realizamos nuestro proyecto en Google Colab. Colaboratory is a Google research project created to help disseminate machine learning education and research. It's a Jupyter notebook environment that requires no setup to use and runs entirely in the cloud.
 
-4 basic movements were programmed for the rehabilitation of the elbow, of which 3 of them will be used in the final rehabilitation.
+https://github.com/altaga/Smart-Medicine-Control/blob/master/Google%20Colab%20Model%20Creator/SmartMedicineControl.ipynb
 
-Elbow flexoextension:
+El primer paso para crear un modelo se AI aterrizado para microcontroladores sera utilizar la version de TensorFlow mas reciente.
 
-<img src="https://i.ibb.co/qkX5VfF/image.png" width="400">
-<img src="https://i.ibb.co/RBY7K7L/image.png" width="400">
+<img src = "https://i.ibb.co/bNCF93B/image.png" width = "500">
 
-Arm Lift:
+Importamos las siguientes librerias para el buen funcionamiento del codigo.
 
-<img src="https://i.ibb.co/CzXGq2v/image.png" width="400">
-<img src="https://i.ibb.co/XZdHHrS/image.png" width="400">
+<img src = "https://i.ibb.co/dm3htqH/image.png" width = "500">
 
-Elbow Flexion:
+Revisamos la version de TensorFlow que tenemos.
 
-<img src="https://i.ibb.co/jkJ4qfd/image.png" width="400">
-<img src="https://i.ibb.co/hDrN088/image.png" width="400">
+<img src = "https://i.ibb.co/s5yncPV/image.png" width = "500">
 
-This is the model that was developed and the number of repetitions for each movement:
+Importamos el dataset para realizar el modelo.
 
-<img src="https://i.ibb.co/mbXWD8T/image.png" width="400">
+<img src = "https://i.ibb.co/4Tqj1HD/image.png" width = "500">
 
-Model motion confusion matrix:
+Obtaining the data and turning it into a Pandas dataframe.
 
-<img src="https://i.ibb.co/m4jWHMt/image.png" width="400">
+This is a dataframe of the entry and exit of medications in a hospital in one year, with each row is one day of the year.
+
+*   Mo1 = Output Medicine 1
+*   Mo2 = Output Medicine 2
+*   Mo3 = Output Medicine 3
+*   Mo4 = Output Medicine 4
+*   Mo5 = Output Medicine 5
+*   Mi1 = Input Medicine 1
+*   Mi2 = Input Medicine 2
+*   Mi3 = Input Medicine 3
+*   Mi4 = Input Medicine 4
+*   Mi5 = Input Medicine 5
+*   U = Urgency
+
+<img src = "https://i.ibb.co/ZJGVfL5/image.png" width = "500">
+
+Revisamos la data para ver que tenemos stock de entrada y de salida, como es normal podemos ver que el hospital al tener un mal sistema de inventario tenemos un sobre stock, con mas medicamentos de entrada que de salida, sin embargo nosotros tenemos que poder arreglar eso mediante nuestra AI.
+
+<img src = "https://i.ibb.co/m6qhP4X/image.png" width = "500">
+
+Tomamos los primeros 5 datos de entrada como el stock de salida y los siguientes 6 como los 5 medicamentos de entrada y su urgencia.
+
+La urgencia la medimos en una escala de 0 - 5.
+
+<img src = "https://i.ibb.co/7Gn5NKR/image.png" width = "500">
+
+Creamos nuestro modelo basandonos una entrada de 5 neuronas y una salida de 6.
+
+<img src = "https://i.ibb.co/Q9cYnhD/image.png" width = "500">
+
+Entrenamos a nuestro modelo realizando 1000 ciclos con los datos de entrenamiento, este valor pueden variarlo para obtener diferentes resultados, pero modificarlo puede provocar un underfit u overfit del modelo.
+
+<img src = "https://i.ibb.co/h7CqTvS/image.png" width = "500">
+
+Realizamos las graficas de precicion y perdida del modelo para verificar que funcione correctamente, estas graficas son un estandard en los modelos de AI, recomiendo siempre relizarlas en todos sus modelos.
+
+<img src = "https://i.ibb.co/mtfv6Bc/image.png" width = "500"><img src = "https://i.ibb.co/bzwnJYw/image.png" width = "500">
 
 ### Widget Configuration:
 
