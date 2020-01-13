@@ -225,7 +225,7 @@ The file "flows.json" in the folder "Node-RED Flow", has all the information to 
 
 Once that is done we will edit the MQTT node to enter our credentials.
 
-<img src = "https://i.ibb.co/GQdDKtk/image.png" width = "600">
+<img src = "https://i.ibb.co/58BpP35/image.png" width = "600">
 
 Set Server and Port.
 
