@@ -11,6 +11,7 @@ Always use technology to improve the world, if you are a black hat or gray hat h
 * [Connection Diagram](#connection-diagram)
 * [RFID Introduction](#rfid-introduction)
 * [Google Colab Project](#google-colab-project)
+* [CloudMQTT Setup](#cloudmqtt-setup)
 * [Pc Setup](#pc-setup)
 * [Arm Setup](#arm-setup)
 * [The Final Product](#the-final-product)
@@ -150,9 +151,17 @@ Como ultimo paso convetiremos el modelo en un vector que pueda ser leido por el 
 
 Aqui termina la parte relacionada con el modelo de AI, la siguiente seccion es la configuracion de tu maquina para poder compilar y flashear el programa en la board.
 
-## Pc Setup:
+## CloudMQTT Setup:
 
-### Board Setup:
+Create an account in Cloud MQTT.
+
+https://www.cloudmqtt.com/
+
+Copy the credentials of "Server", "User", "Password" and "Port".
+
+<img src = "https://i.ibb.co/s9wR395/image.png" width = "1000">
+
+## ArduinoIDE Board Setup:
 
 To add board support, start Arduino and open the Preferences window (File > Preferences). 
 
@@ -178,7 +187,7 @@ Type "sparkfun" (without quotes) into the "filter your search" field, you will s
 
 Note: If you do not have ESP32 installed, search for "ESP32" and press install button for the “ESP32 by Espressif Systems“
 
-### Library Setup:
+## Library Setup:
 
 Open Sketch > Include Library > Manage Libraries... 
 
@@ -188,39 +197,46 @@ Instala la libreria "Arduino_TensorFlowLite by TensorFlow Authors Version **1.15
 
 <img src = "https://i.ibb.co/VD2vr2v/image.png" width = "500">
 
-### Files Setup:
+## Files Setup:
 
 En este caso vamos a utilizar programas de arduino, el del ESP32 y el de la RedBoard, ambos estan contenidos dentro de la carpeta Arduino files, asi que no tienes que hacer nada mas que abrirlos asi como estan una vez hayas descargado e proyecto.
 
 <img src = "https://i.ibb.co/B4rbcxp/Move.png" width = "500">
 
-### Obtaining Credentials.
+## Node-Red Setup:
 
-Save External access token and User ID.
+Node Red is a tool for NodeJS where we can integrate services easily, without code and, of course, create excellent dashboards.
 
-<img src = "https://i.ibb.co/DCcdzCP/image.png" width = "500">
+NodeJS installation guide: https://www.guru99.com/download-install-node-js.html
 
-## CloudMQTT Setup:
+NodeRED installation guide: https://nodered.org/docs/getting-started/windows
 
-Create an account in Cloud MQTT.
+NodeRED installation guide: https://flows.nodered.org/node/node-red-dashboard
 
-https://www.cloudmqtt.com/
+The file "flows.json" in the folder "Node-RED Flow", has all the information to import the flow into your NodeRED.
 
-Copy the credentials of "Server", "User", "Password" and "Port".
+<img src = "https://i.ibb.co/c11ZJT8/image.png" width = "600">
+<img src = "https://i.ibb.co/nBL3M23/image.png" width = "600">
 
-<img src = "https://i.ibb.co/s9wR395/image.png" width = "1000">
+Once that is done we will edit the MQTT node to enter our credentials.
 
-## Laptop Setup:
+<img src = "https://i.ibb.co/GQdDKtk/image.png" width = "600">
 
-Install Python Anaconda so that you can easily manipulate the MQTT broker, this had to be done because the Arduino library ESP32 for MQTT does not accept connectivity such as Websocket.
+Set Server and Port.
 
-https://www.anaconda.com/distribution/
+<img src = "https://i.ibb.co/wdzbztp/image.png" width = "600">
 
-Then install this library:
+Set User and Password.
 
-    pip install paho-mqtt
+<img src = "https://i.ibb.co/cDjySLr/image.png" width = "600">
 
-Download the file Python Files, open "MQTTRehab.py" and put your credentials.
+If everything works fine press the "Deploy" button and enter the following URL to check the Dashboard.
+
+http://localhost:1880/ui
+
+If we execute the Exe.py file, we will see how the data appears on the Dashboard.
+
+<img src = "https://i.ibb.co/1fqQnfw/image.png" width = "800">
 
 ## Arm Setup:
 
