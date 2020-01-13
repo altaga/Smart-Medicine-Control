@@ -20,52 +20,64 @@ Always use technology to improve the world, if you are a black hat or gray hat h
 
 ## Introduction:
 
-Rehabilitation system based on SmartEdge Agile
+Inside hospitals, pharmacies and clinics we can find lots of inventories, but one of the most important is the one in charge of storing drugs or medicine. Inside the hospital, the consumption of medicine and drugs in relation with control of inventory is one of the most important and difficult tasks to perform. Nevertheless  there are hospitals with very robust and technologically advanced systems, even outdated systems for filling out paper applications. However, until today, we find seldom solutions for this problem that integrate and use ML and AI models.
 
-There are people in the world that suffer serious impediments in their arms. These are from several illnesses such as stroke, Guillain-Barré syndrome, paralysis from birth, cerebral palsy, spina bifida, spinal muscular atrophy and several others.
-These patients have to continuously take rehabilitation therapies, which are expensive:
+On this premise we decided to create an inventory control system that learns through AI models the medication entry patterns, in order to be able to make predictions about which medications could be ordered in the following orders and the urgency. The records will enter through RFID on the medication provided.
 
-The prices of these sessions cost from $ 650 to $ 1300 dollars and sometimes are not insurable:
-https://www.healthline.com/health/cool-sculpting-cost
+A couple of solutions we can find in the market are:
 
-They take a lot of time and it is also necessary to go to specific clinics to receive them, which increases the pain and discomfort of the patient due to the physical effort.
+Link: https: //www.clearstreamrfid.com/pricing.htm $2500 dollars.
 
-The clinical devices that perform the rehabilitation are enormous and can not be transported or mobilized easily:
-https://www.hocoma.com/solutions/armeo-power/
-https://www.researchgate.net/figure/Examples-of-robotic-devices-for-motor-training-A-End-effector-type-InMotion-20_fig1_259609214
+This product is only an RFID reading hardware for inventory control, which is a bit more suitable for department stores. Note that it uses no AI.
 
-Therefore we must create a device capable of helping the patient in his rehabilitation, give him continuous feedback of his therapy and it has to be economical (to a certain degree and in comparison to the other choices).
+Link: https://id-integration.com/rfid-starter-kits-for-asset-tracking $ 499 - $ 4999
+
+Provides hardware and even integrations with software, but of course none with an AI implementation.
+
+My solution will be very different, because we will be able to carry out AI implementations through medication registries, which will have an RFID stamp. These will be fundamental for saving orders on medications, avoiding lack of medications or overstocking and continuously improving the system of Hospitals, clinics and pharmacy inventories.
 
 ## Materials:
 
 Hardware:
-- SmartEdge Agile                                  x1.
-https://www.avnet.com/wps/portal/us/solutions/iot/building-blocks/smartedge-agile/
-- Robotic Arm                                      x1.
-https://www.amazon.com/OWI-Robotic-Soldering-Required-Extensive/dp/B0017OFRCY
-- ESP32                                            x2.
+- SparkFun RedBoard Artemis ATP                    x1.
+https://www.sparkfun.com/products/15442/
+- ESP32                                            x1.
 https://www.adafruit.com/product/3405
+- SparkFun RFID Qwiic Reader                       x1.
+https://www.sparkfun.com/products/15191
+- RFID Reader ID-12LA (125kHz)                     x1.
+https://www.sparkfun.com/products/11827
+- RFID Tag (125kHz)                                x2.
+https://www.sparkfun.com/products/14325
+- Qwiic Cable - 100mm                              x1.
+https://www.sparkfun.com/products/14427
 - Standed-Core Wire                                x1.
 https://www.adafruit.com/product/2987
-- 8 Channel DC 5V Relay Module with Optocoupler    x1.
-https://www.amazon.com/Elegoo-Module-Optocoupler-Arduino-Raspberry/dp/B07F623PHG
+- Breadboard PCB                                   x1.
+https://www.amazon.com/dp/B081K1278N/ref=cm_sw_em_r_mt_dp_U_5x.gEb2Z02Q3B
 
 Software:
-- Anrduino IDE.
-- Python Anaconda.
+- Arduino IDE.
+- Google Colab.
 - Cloud MQTT.
 
 ## Connection Diagram:
 
 This is the connection diagram of the system:
 
-<img src="https://i.ibb.co/TTHwbv7/Digram-Rehab.png" width="800">
+<img src="https://i.ibb.co/nrPRQmG/Diagram.png" width="800">
 
-Arm Connection Diagram:
+## RFID Introduction:
 
-<img src="https://hackster.imgix.net/uploads/attachments/942233/68747470733a2f2f692e6962622e636f2f4832344451384e2f41524d2d62622e706e67.png" width="800">
+RFID (radio frequency identification) is a form of wireless communication that incorporates the use of electromagnetic or electrostatic coupling in the radio frequency portion of the electromagnetic spectrum to uniquely identify an object, animal or person. Use cases for RFID technology include healthcare, manufacturing, inventory management, shipping, retail sales and home use.
 
-## Brainium Setup:
+<img src="https://i.ibb.co/ncDW95n/Untitled-1.png" width="800">
+
+This scheme is applicable to any RFID reader in the market but it is more efficient to use the scheme for our project.
+
+<img src="https://ccllabel.com/wp-content/uploads/2016/05/healthcare_smart_products_rfid_blue.jpg" width="800">
+
+In this case we use this technology for medical inventory.
 
 ### Model Training:
 
