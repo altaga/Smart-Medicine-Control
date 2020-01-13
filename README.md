@@ -146,10 +146,6 @@ Seleccionamos al azar un dato e la entrada y lo evaluamos con nuestro modelo nor
 
 Como ultimo paso convetiremos el modelo en un vector que pueda ser leido por el mircrocontrolador.
 
-<img src = "https://i.ibb.co/0ymSjVR/image.png" width = "600">
-
-Seleccionamos al azar un dato e la entrada y lo evaluamos con nuestro modelo normal y nuestro modelo convertido a TF lite, como podemos ver el modelo se comporta muy similar al modelo TF completo.
-
 <img src = "https://i.ibb.co/jyj8PF3/image.png" width = "600">
 
 Aqui termina la parte relacionada con el modelo de AI, la siguiente seccion es la configuracion de tu maquina para poder compilar y flashear el programa en la board.
