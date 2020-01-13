@@ -144,7 +144,7 @@ Seleccionamos al azar un dato e la entrada y lo evaluamos con nuestro modelo nor
 
 <img src = "https://i.ibb.co/0ymSjVR/image.png" width = "600">
 
-Como ultimo paso convetiremos el modelo en un vector que pueda ser leido por el mircrocontrolador.
+Como ultimo paso convetiremos el modelo en un vector que pueda ser leido por el mircrocontrolador, no cierres la ventana porque tendremos que poner este codigo en el microcontrolador.
 
 <img src = "https://i.ibb.co/jyj8PF3/image.png" width = "600">
 
@@ -152,17 +152,23 @@ Aqui termina la parte relacionada con el modelo de AI, la siguiente seccion es l
 
 ## Pc Setup:
 
-Press the button to create the widget.
+To add board support, start Arduino and open the Preferences window (File > Preferences). 
 
-<img src = "https://i.ibb.co/zZSCtkK/image.png" width = "500">
+<img src = "https://i.ibb.co/kmSRjtP/image.png" width = "600">
 
-We assign the model to the device.
+Now copy and paste the following URL into the 'Additional Boards Manager URLs' input field:
 
-<img src = "https://i.ibb.co/wC98Vs3/image.png" width = "500">
+    https://raw.githubusercontent.com/sparkfun/Arduino_Boards/master/IDE_Board_Manager/package_sparkfun_index.json
+    
+<img src = "https://i.ibb.co/Zdgvc56/image.png" width = "500">
 
-We create a widget as shown in the image.
+Open the Boards Manager window by selecting Tools > Board, scroll to the top of the board list, and select Boards Manager.
 
-<img src = "https://i.ibb.co/tD5b4F3/image.png" width = "500">
+<img src = "https://i.ibb.co/Tr43M49/image.png" width = "500">
+
+Type "sparkfun" (without quotes) into the "filter your search" field, you will see options to install SparkFun's Apollo3 and AVR board files. Click in the desired box, and click the "Install" button that appears. Once installed, the boards will appear at the bottom of the board list.(Note: I use version 1.0.17 for this tutorial)
+
+<img src = "https://i.ibb.co/0yqTN4x/image.png" width = "500">
 
 We finish the widget.
 
