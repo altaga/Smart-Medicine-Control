@@ -144,11 +144,7 @@ Seleccionamos al azar un dato e la entrada y lo evaluamos con nuestro modelo nor
 
 <img src = "https://i.ibb.co/0ymSjVR/image.png" width = "600">
 
-Como ultimo paso convetiremos el modelo en un vector que pueda ser leido por el mircrocontrolador.
-
-<img src = "https://i.ibb.co/0ymSjVR/image.png" width = "600">
-
-Seleccionamos al azar un dato e la entrada y lo evaluamos con nuestro modelo normal y nuestro modelo convertido a TF lite, como podemos ver el modelo se comporta muy similar al modelo TF completo.
+Como ultimo paso convetiremos el modelo en un vector que pueda ser leido por el mircrocontrolador, no cierres la ventana porque tendremos que poner este codigo en el microcontrolador.
 
 <img src = "https://i.ibb.co/jyj8PF3/image.png" width = "600">
 
@@ -156,25 +152,47 @@ Aqui termina la parte relacionada con el modelo de AI, la siguiente seccion es l
 
 ## Pc Setup:
 
-Press the button to create the widget.
+### Board Setup:
 
-<img src = "https://i.ibb.co/zZSCtkK/image.png" width = "500">
+To add board support, start Arduino and open the Preferences window (File > Preferences). 
 
-We assign the model to the device.
+<img src = "https://i.ibb.co/kmSRjtP/image.png" width = "700">
 
-<img src = "https://i.ibb.co/wC98Vs3/image.png" width = "500">
+Now copy and paste the following URL into the 'Additional Boards Manager URLs' input field:
 
-We create a widget as shown in the image.
+    https://raw.githubusercontent.com/sparkfun/Arduino_Boards/master/IDE_Board_Manager/package_sparkfun_index.json
+    
+Note: if you do not have ESP32 installed as a board, also add the following url separating them with a comma **, **:
 
-<img src = "https://i.ibb.co/tD5b4F3/image.png" width = "500">
+    https://dl.espressif.com/dl/package_esp32_index.json
+    
+<img src = "https://i.ibb.co/Zdgvc56/image.png" width = "700">
 
-We finish the widget.
+Open the Boards Manager window by selecting Tools > Board, scroll to the top of the board list, and select Boards Manager.
 
-<img src = "https://i.ibb.co/dkB1cJ0/image.png" width = "500">
+<img src = "https://i.ibb.co/Tr43M49/image.png" width = "700">
 
-We will get a result like the following.
+Type "sparkfun" (without quotes) into the "filter your search" field, you will see options to install SparkFun's Apollo3 and AVR board files. Click in the desired box, and click the "Install" button that appears. Once installed, the boards will appear at the bottom of the board list.(Note: I use version 1.0.17 for this tutorial)
 
-<img src = "https://i.ibb.co/2shLmdn/image.png" width = "500">
+<img src = "https://i.ibb.co/0yqTN4x/image.png" width = "700">
+
+Note: If you do not have ESP32 installed, search for "ESP32" and press install button for the “ESP32 by Espressif Systems“
+
+### Library Setup:
+
+Open Sketch > Include Library > Manage Libraries... 
+
+<img src = "https://i.ibb.co/Wkjv19Q/image.png" width = "500">
+
+Instala la libreria "Arduino_TensorFlowLite by TensorFlow Authors Version **1.15.0-ALPHA**" 
+
+<img src = "https://i.ibb.co/VD2vr2v/image.png" width = "500">
+
+### Files Setup:
+
+En este caso vamos a utilizar programas de arduino, el del ESP32 y el de la RedBoard, ambos estan contenidos dentro de la carpeta Arduino files, asi que no tienes que hacer nada mas que abrirlos asi como estan una vez hayas descargado e proyecto.
+
+<img src = "https://i.ibb.co/B4rbcxp/Move.png" width = "500">
 
 ### Obtaining Credentials.
 
