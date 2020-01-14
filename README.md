@@ -208,6 +208,30 @@ En este caso vamos a utilizar programas de arduino, el del ESP32 y el de la RedB
 
 <img src = "https://i.ibb.co/B4rbcxp/Move.png" width = "500">
 
+## Boards Setup:
+
+Dentro del ArduinoIDE abriremos el archivo dentro de la carpeta Arduino Files > RedBoardAI > RedBoardAI.ino, una vez ahi seleccionaremos la RedBoard como objetivo del programa en Tools > Board > SparkFun RedBoard Artemis ATP.
+
+<img src = "https://i.ibb.co/yWrdPYp/image.png" width = "500">
+
+Presionaremos el boton de compilar para asegurarnos que todo funciona correctamente.
+
+<img src = "https://i.ibb.co/vJ6q1Ch/image.png" width = "500">
+
+Regresamos a nuestro proyecto dentro de Google Colab y copiaremos nuestro modelo y su tamaño.
+
+<img src = "https://i.ibb.co/jz70zpf/image.png" width = "500">
+
+Ahora iremos al archivo data.cpp y pegaremos el modelo dentro de la variable de **my_model** y el tamaño dentro de la variable **my_model_len**.
+
+<img src = "https://i.ibb.co/ydjZ9NT/image.png" width = "500">
+
+El siguiente setup lo realizaremos en el ESP32, unicamente tenemos que abrir el archivo y sustituir las credenciales por las tuyas.
+
+<img src = "https://i.ibb.co/3MH3dfL/image.png" width = "500">
+
+Si todo funciona bien, deberas ser capas de flashear los programas en cada una de las boards.
+
 ## Node-Red Setup:
 
 Node Red is a tool for NodeJS where we can integrate services easily, without code and, of course, create excellent dashboards.
@@ -238,8 +262,6 @@ Set User and Password.
 If everything works fine press the "Deploy" button and enter the following URL to check the Dashboard.
 
 http://localhost:1880/ui
-
-If we execute the Exe.py file, we will see how the data appears on the Dashboard.
 
 <img src = "https://i.ibb.co/Cs3v3Gr/image.png" width = "800">
 
