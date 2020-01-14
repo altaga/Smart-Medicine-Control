@@ -1,6 +1,6 @@
 # Smart-Medicine-Control
 
-<img src="https://i.ibb.co/yy4t5gn/Logo.png" width="500">
+<img src="https://i.ibb.co/yy4t5gn/Logo.png" width="1000">
 
 Always use technology to improve the world, if you are a black hat or gray hat hacker please abstain at this point ......... or at least leave your star to make me feel less guilty XP.
 
@@ -17,9 +17,6 @@ Always use technology to improve the world, if you are a black hat or gray hat h
 * [Files Setup](#files-setup)
 * [Boards Setup](#boards-setup)
 * [Node-Red Setup](#node-red-setup)
-* [CloudMQTT Setup](#cloudmqtt-setup)
-* [Pc Setup](#pc-setup)
-* [Arm Setup](#arm-setup)
 * [The Final Product](#the-final-product)
 * [Future Rollout](#future-rollout)
 * [References](#references)
