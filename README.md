@@ -11,6 +11,13 @@ Always use technology to improve the world, if you are a black hat or gray hat h
 * [Connection Diagram](#connection-diagram)
 * [RFID Introduction](#rfid-introduction)
 * [Google Colab Project](#google-colab-project)
+* [CloudMQTT Setup](#cloudmqtt-setup)
+* [ArduinoIDE Board Setup](#arduinoide-board-setup)
+* [Library Setup](#library-setup)
+* [Files Setup](#files-setup)
+* [Boards Setup](#boards-setup)
+* [Node-Red Setup](#node-red-setup)
+* [CloudMQTT Setup](#cloudmqtt-setup)
 * [Pc Setup](#pc-setup)
 * [Arm Setup](#arm-setup)
 * [The Final Product](#the-final-product)
@@ -146,13 +153,21 @@ Seleccionamos al azar un dato e la entrada y lo evaluamos con nuestro modelo nor
 
 Como ultimo paso convetiremos el modelo en un vector que pueda ser leido por el mircrocontrolador, no cierres la ventana porque tendremos que poner este codigo en el microcontrolador.
 
-<img src = "https://i.ibb.co/jyj8PF3/image.png" width = "600">
+<img src = "https://i.ibb.co/jyj8PF3/image.png" width = "700">
 
 Aqui termina la parte relacionada con el modelo de AI, la siguiente seccion es la configuracion de tu maquina para poder compilar y flashear el programa en la board.
 
-## Pc Setup:
+## CloudMQTT Setup:
 
-### Board Setup:
+Create an account in Cloud MQTT.
+
+https://www.cloudmqtt.com/
+
+Copy the credentials of "Server", "User", "Password" and "Port".
+
+<img src = "https://i.ibb.co/s9wR395/image.png" width = "1000">
+
+## ArduinoIDE Board Setup:
 
 To add board support, start Arduino and open the Preferences window (File > Preferences). 
 
@@ -178,68 +193,78 @@ Type "sparkfun" (without quotes) into the "filter your search" field, you will s
 
 Note: If you do not have ESP32 installed, search for "ESP32" and press install button for the “ESP32 by Espressif Systems“
 
-### Library Setup:
+## Library Setup:
 
 Open Sketch > Include Library > Manage Libraries... 
 
-<img src = "https://i.ibb.co/Wkjv19Q/image.png" width = "500">
+<img src = "https://i.ibb.co/Wkjv19Q/image.png" width = "700">
 
 Instala la libreria "Arduino_TensorFlowLite by TensorFlow Authors Version **1.15.0-ALPHA**" 
 
-<img src = "https://i.ibb.co/VD2vr2v/image.png" width = "500">
+<img src = "https://i.ibb.co/VD2vr2v/image.png" width = "700">
 
-### Files Setup:
+## Files Setup:
 
 En este caso vamos a utilizar programas de arduino, el del ESP32 y el de la RedBoard, ambos estan contenidos dentro de la carpeta Arduino files, asi que no tienes que hacer nada mas que abrirlos asi como estan una vez hayas descargado e proyecto.
 
-<img src = "https://i.ibb.co/B4rbcxp/Move.png" width = "500">
+<img src = "https://i.ibb.co/B4rbcxp/Move.png" width = "700">
 
-### Obtaining Credentials.
+## Boards Setup:
 
-Save External access token and User ID.
+Dentro del ArduinoIDE abriremos el archivo dentro de la carpeta Arduino Files > RedBoardAI > RedBoardAI.ino, una vez ahi seleccionaremos la RedBoard como objetivo del programa en Tools > Board > SparkFun RedBoard Artemis ATP.
 
-<img src = "https://i.ibb.co/DCcdzCP/image.png" width = "500">
+<img src = "https://i.ibb.co/yWrdPYp/image.png" width = "700">
 
-## CloudMQTT Setup:
+Presionaremos el boton de compilar para asegurarnos que todo funciona correctamente.
 
-Create an account in Cloud MQTT.
+<img src = "https://i.ibb.co/vJ6q1Ch/image.png" width = "700">
 
-https://www.cloudmqtt.com/
+Regresamos a nuestro proyecto dentro de Google Colab y copiaremos nuestro modelo y su tamaño.
 
-Copy the credentials of "Server", "User", "Password" and "Port".
+<img src = "https://i.ibb.co/jz70zpf/image.png" width = "700">
 
-<img src = "https://i.ibb.co/s9wR395/image.png" width = "1000">
+Ahora iremos al archivo data.cpp y pegaremos el modelo dentro de la variable de **my_model** y el tamaño dentro de la variable **my_model_len**.
 
-## Laptop Setup:
+<img src = "https://i.ibb.co/ydjZ9NT/image.png" width = "700">
 
-Install Python Anaconda so that you can easily manipulate the MQTT broker, this had to be done because the Arduino library ESP32 for MQTT does not accept connectivity such as Websocket.
+El siguiente setup lo realizaremos en el ESP32, unicamente tenemos que abrir el archivo y sustituir las credenciales por las tuyas.
 
-https://www.anaconda.com/distribution/
+<img src = "https://i.ibb.co/3MH3dfL/image.png" width = "700">
 
-Then install this library:
+Si todo funciona bien, deberas ser capas de flashear los programas en cada una de las boards.
 
-    pip install paho-mqtt
+## Node-Red Setup:
 
-Download the file Python Files, open "MQTTRehab.py" and put your credentials.
+Node Red is a tool for NodeJS where we can integrate services easily, without code and, of course, create excellent dashboards.
 
-## Arm Setup:
+NodeJS installation guide: https://www.guru99.com/download-install-node-js.html
 
-Follow this diagram without making a mistake, IF YOU DON'T CONNECT IT WELL YOU CAN DO A SHORT CIRCUIT:
+NodeRED installation guide: https://nodered.org/docs/getting-started/windows
 
-<img src="https://hackster.imgix.net/uploads/attachments/942233/68747470733a2f2f692e6962622e636f2f4832344451384e2f41524d2d62622e706e67.png" width="800">
+NodeRED installation guide: https://flows.nodered.org/node/node-red-dashboard
 
-After connecting all program the ESP32 with the code in the "Arduino Files" folder.
+The file "flows.json" in the folder "Node-RED Flow", has all the information to import the flow into your NodeRED.
 
-<img src="https://www.e-ika.com/images/thumbs/0005376_placa-esp32-wifi-bluetooth_600.jpeg" width="800">
+<img src = "https://i.ibb.co/c11ZJT8/image.png" width = "400">
+<img src = "https://i.ibb.co/nBL3M23/image.png" width = "400">
 
-Open the "ESP32ARMRehab.ino" file and enter the CloudMQTT credentials.
+Once that is done we will edit the MQTT node to enter our credentials.
 
-    const char* ssid = "YOURSSID";
-    const char* password =  "YOURPASS";
-    const char* mqttServer = "m12.cloudmqtt.com";
-    const int mqttPort = 12345;
-    const char* mqttUser = "YOURCLOUDMQTTUSER";
-    const char* mqttPassword = "YOURCLOUDMQTTPASS";
+<img src = "https://i.ibb.co/58BpP35/image.png" width = "600">
+
+Set Server and Port.
+
+<img src = "https://i.ibb.co/wdzbztp/image.png" width = "600">
+
+Set User and Password.
+
+<img src = "https://i.ibb.co/cDjySLr/image.png" width = "600">
+
+If everything works fine press the "Deploy" button and enter the following URL to check the Dashboard.
+
+http://localhost:1880/ui
+
+<img src = "https://i.ibb.co/Cs3v3Gr/image.png" width = "800">
 
 ## The Final Product:
 
