@@ -8,10 +8,7 @@
 #ifndef DATA_H_
 #define DATA_H_
 
-extern const unsigned char mi_data[];
-extern const int mi_data_len;
+extern const unsigned char my_model[];
+extern const int my_model_len;
 
 #endif 
-
-extern const float test[5][5];
-extern const float labels[10][3];
