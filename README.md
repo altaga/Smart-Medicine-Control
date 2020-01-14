@@ -15,6 +15,7 @@ Always use technology to improve the world, if you are a black hat or gray hat h
 * [ArduinoIDE Board Setup](#arduinoide-board-setup)
 * [Library Setup](#library-setup)
 * [Files Setup](#files-setup)
+* [Boards Setup](#boards-setup)
 * [Node-Red Setup](#node-red-setup)
 * [CloudMQTT Setup](#cloudmqtt-setup)
 * [Pc Setup](#pc-setup)
@@ -152,7 +153,7 @@ Seleccionamos al azar un dato e la entrada y lo evaluamos con nuestro modelo nor
 
 Como ultimo paso convetiremos el modelo en un vector que pueda ser leido por el mircrocontrolador, no cierres la ventana porque tendremos que poner este codigo en el microcontrolador.
 
-<img src = "https://i.ibb.co/jyj8PF3/image.png" width = "600">
+<img src = "https://i.ibb.co/jyj8PF3/image.png" width = "700">
 
 Aqui termina la parte relacionada con el modelo de AI, la siguiente seccion es la configuracion de tu maquina para poder compilar y flashear el programa en la board.
 
@@ -196,39 +197,39 @@ Note: If you do not have ESP32 installed, search for "ESP32" and press install b
 
 Open Sketch > Include Library > Manage Libraries... 
 
-<img src = "https://i.ibb.co/Wkjv19Q/image.png" width = "500">
+<img src = "https://i.ibb.co/Wkjv19Q/image.png" width = "700">
 
 Instala la libreria "Arduino_TensorFlowLite by TensorFlow Authors Version **1.15.0-ALPHA**" 
 
-<img src = "https://i.ibb.co/VD2vr2v/image.png" width = "500">
+<img src = "https://i.ibb.co/VD2vr2v/image.png" width = "700">
 
 ## Files Setup:
 
 En este caso vamos a utilizar programas de arduino, el del ESP32 y el de la RedBoard, ambos estan contenidos dentro de la carpeta Arduino files, asi que no tienes que hacer nada mas que abrirlos asi como estan una vez hayas descargado e proyecto.
 
-<img src = "https://i.ibb.co/B4rbcxp/Move.png" width = "500">
+<img src = "https://i.ibb.co/B4rbcxp/Move.png" width = "700">
 
 ## Boards Setup:
 
 Dentro del ArduinoIDE abriremos el archivo dentro de la carpeta Arduino Files > RedBoardAI > RedBoardAI.ino, una vez ahi seleccionaremos la RedBoard como objetivo del programa en Tools > Board > SparkFun RedBoard Artemis ATP.
 
-<img src = "https://i.ibb.co/yWrdPYp/image.png" width = "500">
+<img src = "https://i.ibb.co/yWrdPYp/image.png" width = "700">
 
 Presionaremos el boton de compilar para asegurarnos que todo funciona correctamente.
 
-<img src = "https://i.ibb.co/vJ6q1Ch/image.png" width = "500">
+<img src = "https://i.ibb.co/vJ6q1Ch/image.png" width = "700">
 
 Regresamos a nuestro proyecto dentro de Google Colab y copiaremos nuestro modelo y su tamaño.
 
-<img src = "https://i.ibb.co/jz70zpf/image.png" width = "500">
+<img src = "https://i.ibb.co/jz70zpf/image.png" width = "700">
 
 Ahora iremos al archivo data.cpp y pegaremos el modelo dentro de la variable de **my_model** y el tamaño dentro de la variable **my_model_len**.
 
-<img src = "https://i.ibb.co/ydjZ9NT/image.png" width = "500">
+<img src = "https://i.ibb.co/ydjZ9NT/image.png" width = "700">
 
 El siguiente setup lo realizaremos en el ESP32, unicamente tenemos que abrir el archivo y sustituir las credenciales por las tuyas.
 
-<img src = "https://i.ibb.co/3MH3dfL/image.png" width = "500">
+<img src = "https://i.ibb.co/3MH3dfL/image.png" width = "700">
 
 Si todo funciona bien, deberas ser capas de flashear los programas en cada una de las boards.
 
@@ -244,8 +245,8 @@ NodeRED installation guide: https://flows.nodered.org/node/node-red-dashboard
 
 The file "flows.json" in the folder "Node-RED Flow", has all the information to import the flow into your NodeRED.
 
-<img src = "https://i.ibb.co/c11ZJT8/image.png" width = "600">
-<img src = "https://i.ibb.co/nBL3M23/image.png" width = "600">
+<img src = "https://i.ibb.co/c11ZJT8/image.png" width = "400">
+<img src = "https://i.ibb.co/nBL3M23/image.png" width = "400">
 
 Once that is done we will edit the MQTT node to enter our credentials.
 
@@ -264,25 +265,6 @@ If everything works fine press the "Deploy" button and enter the following URL t
 http://localhost:1880/ui
 
 <img src = "https://i.ibb.co/Cs3v3Gr/image.png" width = "800">
-
-## Arm Setup:
-
-Follow this diagram without making a mistake, IF YOU DON'T CONNECT IT WELL YOU CAN DO A SHORT CIRCUIT:
-
-<img src="https://hackster.imgix.net/uploads/attachments/942233/68747470733a2f2f692e6962622e636f2f4832344451384e2f41524d2d62622e706e67.png" width="800">
-
-After connecting all program the ESP32 with the code in the "Arduino Files" folder.
-
-<img src="https://www.e-ika.com/images/thumbs/0005376_placa-esp32-wifi-bluetooth_600.jpeg" width="800">
-
-Open the "ESP32ARMRehab.ino" file and enter the CloudMQTT credentials.
-
-    const char* ssid = "YOURSSID";
-    const char* password =  "YOURPASS";
-    const char* mqttServer = "m12.cloudmqtt.com";
-    const int mqttPort = 12345;
-    const char* mqttUser = "YOURCLOUDMQTTUSER";
-    const char* mqttPassword = "YOURCLOUDMQTTPASS";
 
 ## The Final Product:
 
