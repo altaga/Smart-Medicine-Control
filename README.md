@@ -287,7 +287,7 @@ Complete system:
 ### Our Epic DEMO:
 
 Video: Click on the image
-[![Rehab](https://i.ibb.co/Bjg48mh/Brainium-Rehab.png)](https://youtu.be/GYoLvldvk-s)
+[![Rehab](https://i.ibb.co/yy4t5gn/Logo.png)](https://youtu.be/fDEJnKJJC_w)
 
 Sorry github does not allow embed videos.
 
