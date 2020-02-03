@@ -263,26 +263,23 @@ http://localhost:1880/ui
 
 <img src = "https://i.ibb.co/Cs3v3Gr/image.png" width = "800">
 
-## The Final Product:
+## Avengers assemble!!!!............Project assembly:
 
-Robotic Arm:
+All:
 
-<img src="https://i.ibb.co/X3JNNLB/DSC00056-2.jpg" width="800">
-<img src="https://i.ibb.co/HHM2DQ1/DSC00059-2.jpg" width="800">
-
-ESP32 Arm Driver:
-
-<img src="https://i.ibb.co/mJ73KNs/DSC00068.jpg" width="800">
-
-Brainium Module:
-
-<img src="https://i.ibb.co/cFZrYdJ/DSC00061-2.jpg" width="800">
-<img src="https://i.ibb.co/kgds0Xn/DSC00062-2.jpg" width="800">
-<img src="https://i.ibb.co/xFm1f0T/DSC00063-2.jpg" width="800">
+<img src="https://i.ibb.co/FwcSxz5/20200202-150308.png" width="800">
+<img src="https://i.ibb.co/qYt7qxX/20200202-150745.png" width="800">
+<img src="https://i.ibb.co/XbvpzD2/20200202-150758.png" width="800">
+<img src="https://i.ibb.co/CWcXS5P/20200202-150819.png" width="800">
+<img src="https://i.ibb.co/Yd3kCv8/20200202-150850.png" width="800">
+<img src="https://i.ibb.co/Z1ndQs4/20200202-150905.png" width="800">
+<img src="https://i.ibb.co/NFDXRZ5/20200202-151313.png" width="800">
+<img src="https://i.ibb.co/5xypYGs/20200202-151253.png" width="800">
+<img src="https://i.ibb.co/DMMjmVQ/20200202-151333.png" width="800">
 
 Complete system:
 
-<img src="https://i.ibb.co/dMb7c6V/DSC00066-2.jpg" width="800">
+<img src="https://i.ibb.co/YZ7v4Y8/Final.png" width="800">
 
 ### Our Epic DEMO:
 
