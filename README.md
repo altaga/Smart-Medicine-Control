@@ -37,7 +37,7 @@ Link: https://id-integration.com/rfid-starter-kits-for-asset-tracking $ 499 - $ 
 
 Provides hardware and even integrations with software, but of course none with an AI implementation.
 
-My solution will be very different, because we will be able to carry out AI implementations through medication registries, which will have an RFID stamp. These will be fundamental for saving orders on medications, avoiding lack of medications or overstocking and continuously improving the system of Hospitals, clinics and pharmacy inventories.
+Our solution will be very different, because we will be able to carry out AI implementations through medication registries, which will have an RFID stamp. These will be fundamental for saving orders on medications, avoiding lack of medications or overstocking and continuously improving the system of Hospitals, clinics and pharmacy inventories.
 
 ## Materials:
 
@@ -84,29 +84,29 @@ In this case we use this technology for medical inventory.
 
 ## Google Colab Project:
 
-Para realizar nuestro proyecto lo mas compatible posible con cualquier computadora o incluso un movil, realizamos nuestro proyecto en Google Colab. Colaboratory is a Google research project created to help disseminate machine learning education and research. It's a Jupyter notebook environment that requires no setup to use and runs entirely in the cloud.
+To make our project as compatible as possible with any computer or even a mobile phone, we design it to run in Google Colab. Colaboratory is a Google research project created to help disseminate machine learning education and research. It's a Jupyter notebook environment that requires no setup to use and runs entirely in the cloud.
 
 https://github.com/altaga/Smart-Medicine-Control/blob/master/Google%20Colab%20Model%20Creator/SmartMedicineControl.ipynb
 
-El primer paso para crear un modelo se AI aterrizado para microcontroladores sera utilizar la version de TensorFlow mas reciente.
+The first step in creating a model for microcontrollers will be to use the latest version of TensorFlow.
 
 <img src = "https://i.ibb.co/bNCF93B/image.png" width = "700">
 
-Importamos las siguientes librerias para el buen funcionamiento del codigo.
+We import the following libraries for the code to function properly.
 
 <img src = "https://i.ibb.co/dm3htqH/image.png" width = "700">
 
-Revisamos la version de TensorFlow que tenemos.
+Then we check the TF version we have.
 
 <img src = "https://i.ibb.co/s5yncPV/image.png" width = "700">
 
-Importamos el dataset para realizar el modelo.
+We import the dataset
 
 <img src = "https://i.ibb.co/4Tqj1HD/image.png" width = "700">
 
 Obtaining the data and turning it into a Pandas dataframe.
 
-This is a dataframe of the entry and exit of medications in a hospital in one year, with each row is one day of the year.
+This is a dataframe of the entry and exit of medications in a hospital in one year, with each row meaning one day of the year.
 
 *   Mo1 = Output Medicine 1
 *   Mo2 = Output Medicine 2
@@ -122,37 +122,41 @@ This is a dataframe of the entry and exit of medications in a hospital in one ye
 
 <img src = "https://i.ibb.co/ZJGVfL5/image.png" width = "700">
 
-Revisamos la data para ver que tenemos stock de entrada y de salida, como es normal podemos ver que el hospital al tener un mal sistema de inventario tenemos un sobre stock, con mas medicamentos de entrada que de salida, sin embargo nosotros tenemos que poder arreglar eso mediante nuestra AI.
+We check the data to see that we have incoming and outgoing stock. As usual we can see that the hospital, having a bad inventory system, has an over-stock. With more incoming and outgoing medications, however we have to be able to fix that through our AI.
 
 <img src = "https://i.ibb.co/m6qhP4X/image.png" width = "700">
 
-Tomamos los primeros 5 datos de entrada como el stock de salida y los siguientes 6 como los 5 medicamentos de entrada y su urgencia.
+We take the first 5 input data as the output stock and the next 6 as the 5 input medications and their urgency.
 
-La urgencia la medimos en una escala de 0 - 5.
+We measure urgency on a scale of 0 - 5.
 
 <img src = "https://i.ibb.co/7Gn5NKR/image.png" width = "700">
 
-Creamos nuestro modelo basandonos una entrada de 5 neuronas y una salida de 6.
+We create our model based on an input of 5 neurons and an output of 6.
 
 <img src = "https://i.ibb.co/Q9cYnhD/image.png" width = "700">
 
-Entrenamos a nuestro modelo realizando 1000 ciclos con los datos de entrenamiento, este valor pueden variarlo para obtener diferentes resultados, pero modificarlo puede provocar un underfit u overfit del modelo.
+We train our model by performing 1000 cycles with training data, this value can vary to obtain different results, but modifying it can cause an underfit or overfit of the model.
 
 <img src = "https://i.ibb.co/h7CqTvS/image.png" width = "700">
 
-Realizamos las graficas de precicion y perdida del modelo para verificar que funcione correctamente, estas graficas son un estandard en los modelos de AI, recomiendo siempre relizarlas en todos sus modelos.
+We perform the precision and loss graphs of the model to verify that it works correctly, these graphs are a standard in AI models, I always recommend to perform them in all its models.
 
 <img src = "https://i.ibb.co/mtfv6Bc/image.png" width = "400"><img src = "https://i.ibb.co/bzwnJYw/image.png" width = "400">
 
-Seleccionamos al azar un dato e la entrada y lo evaluamos con nuestro modelo normal y nuestro modelo convertido a TF lite, como podemos ver el modelo se comporta muy similar al modelo TF completo.
+We randomly select an entry and we evaluate it with our normal model and our model converted to TF lite, as we can see the model behaves very similar to the complete TF model.
 
 <img src = "https://i.ibb.co/0ymSjVR/image.png" width = "600">
 
-Como ultimo paso convetiremos el modelo en un vector que pueda ser leido por el mircrocontrolador, no cierres la ventana porque tendremos que poner este codigo en el microcontrolador.
+As a last step we will convert the model into a vector that can be read by the mircrocontroller, do not close the window because we will have to input this code into the microcontroller.
 
 <img src = "https://i.ibb.co/jyj8PF3/image.png" width = "700">
 
-Aqui termina la parte relacionada con el modelo de AI, la siguiente seccion es la configuracion de tu maquina para poder compilar y flashear el programa en la board.
+See the model executedin its Jupyter notebook with explanations in full at:
+
+https://github.com/altaga/Smart-Medicine-Control/blob/master/Google%20Colab%20Model%20Creator/SmartMedicineControl.ipynb
+
+Here ends the part related to the AI model, the next section is the configuration of your machine to compile and flash the program on the board.
 
 ## CloudMQTT Setup:
 
@@ -196,39 +200,39 @@ Open Sketch > Include Library > Manage Libraries...
 
 <img src = "https://i.ibb.co/Wkjv19Q/image.png" width = "700">
 
-Instala la libreria "Arduino_TensorFlowLite by TensorFlow Authors Version **1.15.0-ALPHA**" 
+Install the "Arduino_TensorFlowLite library by TensorFlow Authors Version 1.15.0-ALPHA"
 
 <img src = "https://i.ibb.co/VD2vr2v/image.png" width = "700">
 
 ## Files Setup:
 
-En este caso vamos a utilizar programas de arduino, el del ESP32 y el de la RedBoard, ambos estan contenidos dentro de la carpeta Arduino files, asi que no tienes que hacer nada mas que abrirlos asi como estan una vez hayas descargado e proyecto.
+In this case we will use arduino programs, that of the ESP32 and that of the RedBoard, both are contained within the Arduino files folder, so you do not have to do anything more than open them just as they are once you have downloaded the project.
 
 <img src = "https://i.ibb.co/B4rbcxp/Move.png" width = "700">
 
 ## Boards Setup:
 
-Dentro del ArduinoIDE abriremos el archivo dentro de la carpeta Arduino Files > RedBoardAI > RedBoardAI.ino, una vez ahi seleccionaremos la RedBoard como objetivo del programa en Tools > Board > SparkFun RedBoard Artemis ATP.
+Inside the ArduinoIDE we will open the file inside the Arduino Files> RedBoardAI> RedBoardAI.ino folder, once there we will select the RedBoard as the objective of the program in Tools> Board> SparkFun RedBoard Artemis ATP.
 
 <img src = "https://i.ibb.co/yWrdPYp/image.png" width = "700">
 
-Presionaremos el boton de compilar para asegurarnos que todo funciona correctamente.
+Press the compile button to make sure everything works correctly.
 
 <img src = "https://i.ibb.co/vJ6q1Ch/image.png" width = "700">
 
-Regresamos a nuestro proyecto dentro de Google Colab y copiaremos nuestro modelo y su tamaño.
+We return to our project within Google Colab and copy the model and its size.
 
 <img src = "https://i.ibb.co/jz70zpf/image.png" width = "700">
 
-Ahora iremos al archivo data.cpp y pegaremos el modelo dentro de la variable de **my_model** y el tamaño dentro de la variable **my_model_len**.
+Now we will go to the data.cpp file and paste the model into the **my_model** variable and the size into the **my_model_len** variable.
 
 <img src = "https://i.ibb.co/ydjZ9NT/image.png" width = "700">
 
-El siguiente setup lo realizaremos en el ESP32, unicamente tenemos que abrir el archivo y sustituir las credenciales por las tuyas.
+The following setup will be done on ESP32, we only have to open the file and replace the credentials with yours.
 
 <img src = "https://i.ibb.co/3MH3dfL/image.png" width = "700">
 
-Si todo funciona bien, deberas ser capas de flashear los programas en cada una de las boards.
+If everything works fine, you should be able to flash the programs on each of the boards.
 
 ## Node-Red Setup:
 
@@ -263,7 +267,7 @@ http://localhost:1880/ui
 
 <img src = "https://i.ibb.co/Cs3v3Gr/image.png" width = "800">
 
-## Avengers assemble!!!!............Project assembly:
+## Project assembly:
 
 All:
 
@@ -289,10 +293,12 @@ Video: Click on the image
 
 Sorry github does not allow embed videos.
 
-## Future Rollout:
-
- inventa algo
+## Commentary:
+We are quite satisfied with how this project came about, and we think that the implementation of AI and Machine learning at the edge is quite novel for this use case. By working in the healthcare industry (both in developed and underdeveloped countries) we have seen which klind of problems are more recurrent. Among those is the rising cost of healthcare and among that we can count the poor inventory systems that we have. They have been exploited for quite a while now generating even more problems and it is an area where AI can shine by reducing costs and granting the users valuable information. For a prototype this project has great potential as it only lacks a little in terms of design both Industrial and Electronics but we are quite amazed in how the Redboard performed and we look forward to keep experinmenting with hardware like this one.
 
 ## References:
+(1) http://article.sapub.org/10.5923.j.mm.20130301.01.html
 
-Links 
+https://www.sparkfun.com/
+
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.15.8571&rep=rep1&type=pdf
